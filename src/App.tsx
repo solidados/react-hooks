@@ -38,6 +38,7 @@ function App(): ReactElement {
       <UseReducerTodos />
       <hr />
       <ComponentOne />
+      <hr />
     </div>
   );
 }

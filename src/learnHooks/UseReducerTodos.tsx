@@ -53,30 +53,33 @@ const UseReducerTodos = () => {
   }
 
   return (
-    <div className="d-flex flex-column">
-      <form onSubmit={handleSubmit} className="mb-3">
-        <input
-          type="text"
-          className="form-control"
-          aria-label="Sizing example input"
-          aria-describedby="inputGroup-sizing-default"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </form>
-      {todos.map((todo) => (
-        <TodoComponent
-          key={todo.id}
-          todo={todo}
-          onToggle={() =>
-            dispatch({ type: ACTIONS.TOGGLE_TODO, payload: { id: todo.id } })
-          }
-          onDelete={() =>
-            dispatch({ type: ACTIONS.REMOVE_TODO, payload: { id: todo.id } })
-          }
-        />
-      ))}
-    </div>
+    <>
+      <h3 className="text-decoration-underline">Todo List: useReducer()</h3>
+      <div className="d-flex flex-column p-4 ">
+        <form onSubmit={handleSubmit} className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </form>
+        {todos.map((todo) => (
+          <TodoComponent
+            key={todo.id}
+            todo={todo}
+            onToggle={() =>
+              dispatch({ type: ACTIONS.TOGGLE_TODO, payload: { id: todo.id } })
+            }
+            onDelete={() =>
+              dispatch({ type: ACTIONS.REMOVE_TODO, payload: { id: todo.id } })
+            }
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

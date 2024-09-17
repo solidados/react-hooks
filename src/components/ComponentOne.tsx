@@ -7,7 +7,15 @@ const ComponentOne = () => {
   const [name, setName] = useLocalStorage("name", "");
   useUpdateLogger(name);
   return (
-    <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+    <>
+      <h3 className="text-decoration-underline">Custom hooks</h3>
+      <input
+        className="form-control "
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </>
   );
 };
 
