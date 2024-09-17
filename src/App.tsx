@@ -10,9 +10,10 @@ import UseRefName from "./learnHooks/UseRefName.tsx";
 import UseContext from "./learnHooks/UseContext.tsx";
 import UseReducer from "./learnHooks/UseReducer.tsx";
 import UseReducerTodos from "./learnHooks/UseReducerTodos.tsx";
+import ComponentOne from "./components/ComponentOne.tsx";
+import UseLayoutEffect from "./learnHooks/UseLayoutEffect.tsx";
 
 import "bootstrap/dist/css/bootstrap.css";
-import ComponentOne from "./components/ComponentOne.tsx";
 
 function App(): ReactElement {
   return (
@@ -39,6 +40,7 @@ function App(): ReactElement {
       <hr />
       <ComponentOne />
       <hr />
+      <UseLayoutEffect />
     </div>
   );
 }
