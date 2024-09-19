@@ -26,6 +26,7 @@ const UseRefName = () => {
         <input
           /*ref={inputRef}*/
           type="text"
+          className="form-control border-0 border-bottom rounded-0 mb-2"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />

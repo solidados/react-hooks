@@ -69,7 +69,7 @@ const UseEffect = () => {
     <>
       <h3 className="text-decoration-underline">useEffect()</h3>
       <div className="d-flex flex-column align-items-center gap-2 my-3">
-        <h3>{windowWidth}</h3>
+        <h3>Window width: {windowWidth}</h3>
         <div className="d-flex justify-content-center align-items-center gap-2">
           <button
             className="btn btn-outline-info"

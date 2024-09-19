@@ -44,40 +44,52 @@ const UseReducerTodos = () => {
   const [todos, dispatch] = useReducer(reducer, [] as Todo[]);
   const [name, setName] = useState<string>("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (name.trim()) {
       dispatch({ type: ACTIONS.ADD_TODO, payload: { name } });
       setName("");
     }
-  }
+  };
+
+  const toggleTodo = (todo: Todo) =>
+    dispatch({ type: ACTIONS.TOGGLE_TODO, payload: { id: todo.id } });
+
+  const removeTodo = (todo: Todo) =>
+    dispatch({ type: ACTIONS.REMOVE_TODO, payload: { id: todo.id } });
 
   return (
     <>
       <h3 className="text-decoration-underline">Todo List: useReducer()</h3>
       <div className="d-flex flex-column p-4 ">
         <form onSubmit={handleSubmit} className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+          <label
+            htmlFor="todoEntry"
+            className="d-block display-6 m-0 text-danger-emphasis"
+          >
+            What do you plan ToDo?
+            <input
+              id="todoEntry"
+              type="text"
+              className="form-control border-0 border-bottom rounded-0 mt-2 text-dark-emphasis"
+              style={{ outline: "none", boxShadow: "none" }}
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
         </form>
-        {todos.map((todo) => (
-          <TodoComponent
-            key={todo.id}
-            todo={todo}
-            onToggle={() =>
-              dispatch({ type: ACTIONS.TOGGLE_TODO, payload: { id: todo.id } })
-            }
-            onDelete={() =>
-              dispatch({ type: ACTIONS.REMOVE_TODO, payload: { id: todo.id } })
-            }
-          />
-        ))}
+        <div className="d-flex flex-column align-items-start">
+          {todos.map((todo) => (
+            <TodoComponent
+              key={todo.id}
+              todo={todo}
+              onToggle={() => toggleTodo(todo)}
+              onDelete={() => removeTodo(todo)}
+            />
+          ))}
+        </div>
       </div>
     </>
   );

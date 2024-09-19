@@ -1,0 +1,7 @@
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+input:focus {
+  outline: none;
+  box-shadow: none;
+}

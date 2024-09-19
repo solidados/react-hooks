@@ -3,16 +3,17 @@ import { ReactElement } from "react";
 import StopWatch from "./components/StopWatch.tsx";
 import UseState from "./learnHooks/UseState.tsx";
 import UseEffect from "./learnHooks/UseEffect.tsx";
+import UseLayoutEffect from "./learnHooks/UseLayoutEffect.tsx";
 import UseCallback from "./learnHooks/UseCallback.tsx";
-import UseRefClick from "./learnHooks/UseRefClick.tsx";
 import UseMemo from "./learnHooks/UseMemo.tsx";
+import UseRefClick from "./learnHooks/UseRefClick.tsx";
 import UseRefName from "./learnHooks/UseRefName.tsx";
 import UseContext from "./learnHooks/UseContext.tsx";
 import UseReducer from "./learnHooks/UseReducer.tsx";
 import UseReducerTodos from "./learnHooks/UseReducerTodos.tsx";
 import ComponentOne from "./components/ComponentOne.tsx";
-import UseLayoutEffect from "./learnHooks/UseLayoutEffect.tsx";
 
+import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 function App(): ReactElement {
@@ -23,6 +24,8 @@ function App(): ReactElement {
       <UseState />
       <hr />
       <UseEffect />
+      <hr />
+      <UseLayoutEffect />
       <hr />
       <UseCallback />
       <hr />
@@ -39,8 +42,6 @@ function App(): ReactElement {
       <UseReducerTodos />
       <hr />
       <ComponentOne />
-      <hr />
-      <UseLayoutEffect />
     </div>
   );
 }

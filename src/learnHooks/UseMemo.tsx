@@ -20,10 +20,11 @@ const UseMemo = () => {
   return (
     <>
       <h3 className="text-decoration-underline">useMemo()</h3>
-      <div className="px-2 py-2" style={themeStyles}>
+      <div className="px-2 py-4" style={themeStyles}>
         <div className="d-flex align-items-center gap-3">
           <input
-            className="input-group-lg py-2 rounded-2 bg-body-secondary"
+            className="w-25 form-control border-0 border-bottom rounded-0"
+            style={{ outline: "none", boxShadow: "none" }}
             type="number"
             value={number}
             onChange={(e) => setNumber(parseInt(e.target.value))}
@@ -43,7 +44,9 @@ const UseMemo = () => {
 
 function slowFunction(num: number): number {
   console.log("Calling Slow function");
-  for (let i = 0; i < 1000000000; i++) {}
+  for (let i = 0; i < 1000000000; i++) {
+    /**/
+  }
   return num * 2;
 }
 

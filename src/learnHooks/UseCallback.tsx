@@ -30,7 +30,8 @@ const UseCallback = () => {
       <h3 className="text-decoration-underline">useCallback()</h3>
       <div style={theme} className="d-flex align-items-center px-2 py-4 gap-3">
         <input
-          className="input-group-lg py-2 rounded-2 bg-body-secondary"
+          className="w-25 form-control border-0 border-bottom rounded-0"
+          style={{ outline: "none", boxShadow: "none" }}
           type="number"
           value={number}
           onChange={(e) => setNumber(parseInt(e.target.value))}
